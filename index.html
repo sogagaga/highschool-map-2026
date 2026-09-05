@@ -52,11 +52,10 @@
         // マップの初期化
         var map = L.map('map').setView([35.5, 139.6], 12);
 
-        // 🗺️ 【改良版】視認性が高く文字がスッキリ見やすい「CartoDB Positron」タイルに変更
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+        // 🗺️ 【完全無料・APIキー不要】標準的で安定しているOpenStreetMapタイルに戻すで！
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
-            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-            subdomains: 'abcd'
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
         }).addTo(map);
 
         // 位置データリスト
@@ -164,7 +163,7 @@
         if (bounds.length > 0) {
             map.fitBounds(bounds, { 
                 padding: [50, 50],
-                maxZoom: 14 // これにより、スマホで引きすぎず最初から程よく文字が大きく見えるようになるで！
+                maxZoom: 14 // スマホで引きすぎず、程よく拡大されて見やすくなるで！
             });
         }
     </script>
