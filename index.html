@@ -15,6 +15,7 @@
             width: 100vw;
             height: 100vh;
         }
+        /* デフォルト（PCなど大画面）のラベル設定 */
         .custom-label {
             background: rgba(255, 255, 255, 0.95);
             border: 1px solid #999;
@@ -30,6 +31,14 @@
             color: white;
             font-weight: bold;
             border: 1px solid #d9534f;
+        }
+
+        /* 📱 スマホ画面（幅768px以下）での文字サイズ自動拡大 */
+        @media (max-width: 768px) {
+            .custom-label {
+                font-size: 15px; /* スマホでハッキリ読めるサイズに拡大や！ */
+                padding: 6px 10px;
+            }
         }
     </style>
 </head>
@@ -156,7 +165,7 @@
 
         // 全てのピン（自宅含む）がしっかり画面内に収まるように自動調整
         if (bounds.length > 0) {
-            map.fitBounds(bounds, { padding: [60, 60] });
+            map.fitBounds(bounds, { padding: [60, 60] } );
         }
     </script>
 </body>
